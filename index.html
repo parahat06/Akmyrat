@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akmyrat & Ayjahan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(#fce4ec, #f8bbd0);
+      color: #4a148c;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    header {
+      padding: 2rem 1rem;
+    }
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      margin-bottom: 0;
+    }
+    h2 {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    .heart {
+      position: fixed;
+      top: -10px;
+      left: 50%;
+      animation: fall 5s linear infinite;
+      color: red;
+      font-size: 24px;
+    }
+    @keyframes fall {
+      0% {transform: translateY(0) translateX(0); opacity: 1;}
+      100% {transform: translateY(100vh) translateX(-100px); opacity: 0;}
+    }
+    .quote {
+      margin: 2rem auto;
+      font-size: 1.5rem;
+      font-style: italic;
+    }
+    .button {
+      margin-top: 2rem;
+      background-color: #d81b60;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 20px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .button:hover {
+      background-color: #880e4f;
+    }
+    #surprise-message {
+      display: none;
+      margin-top: 2rem;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .countdown {
+      margin-top: 2rem;
+      font-size: 1.4rem;
+      color: #6a1b9a;
+    }
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Akmyrat ❤️ Ayjahan</h1>
+    <h2>10.02.2025'ten beri birlikte...</h2>
+  </header>
+
+  <div class="quote">“Men seni söýýän aýym”</div>
+
+  <div class="countdown" id="countdown"></div>
+
+  <button class="button" onclick="showSurprise()">💌 Sürpriz Butonu</button>
+
+  <div id="surprise-message">
+    Ayjahan, sen benim kalbimin en özel yerindesin. Seninle tanıştığım o gün, hayatım değişti. Her geçen gün seni daha çok seviyorum. Sensiz bir hayatı hayal bile edemem. Gülüşün, sesin, varlığın bana nefes oluyor. Seninle birlikte her şey güzel. Seni sonsuz seviyorum ❤️
+  </div>
+
+  <audio autoplay loop>
+    <source src="https://dl.dropboxusercontent.com/scl/fi/c8y7htgk1i9ghoj1v46bw/firtinadayim.mp3?rlkey=luam1wbco11wwb3x82ycwrcuq&st=vhvte3hc" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function showSurprise() {
+      document.getElementById("surprise-message").style.display = "block";
+    }
+
+    function createHearts() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.textContent = "❤️";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+    setInterval(createHearts, 300);
+
+    // Countdown logic
+    const anniversary = new Date("2026-02-10T00:00:00").getTime();
+    const countdownEl = document.getElementById("countdown");
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = anniversary - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.innerHTML = `Yıldönümümüze kalan süre: ${days} gün ${hours} saat ${minutes} dakika ${seconds} saniye`;
+    }, 1000);
+  </script>
+</body>
+</html>
+
+
+search()
+
