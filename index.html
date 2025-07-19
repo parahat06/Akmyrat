@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="tr">
+<!DOCTYPE html><html lang="tr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -70,6 +69,23 @@
       font-size: 1.4rem;
       color: #6a1b9a;
     }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding: 2rem 1rem;
+    }
+    .gallery img {
+      width: 280px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
     audio {
       display: none;
     }
@@ -79,23 +95,17 @@
   <header>
     <h1>Akmyrat ❤️ Ayjahan</h1>
     <h2>10.02.2025'ten beri birlikte...</h2>
-  </header>
-
-  <div class="quote">“Men seni söýýän aýym”</div>
-
-  <div class="countdown" id="countdown"></div>
-
-  <button class="button" onclick="showSurprise()">💌 Sürpriz Butonu</button>
+  </header>  <div class="quote">“Men seni söýýän aýym”</div>  <div class="countdown" id="countdown"></div><button class="button" onclick="showSurprise()">💌 Sürpriz Butonu</button>
 
   <div id="surprise-message">
     Ayjahan, sen benim kalbimin en özel yerindesin. Seninle tanıştığım o gün, hayatım değişti. Her geçen gün seni daha çok seviyorum. Sensiz bir hayatı hayal bile edemem. Gülüşün, sesin, varlığın bana nefes oluyor. Seninle birlikte her şey güzel. Seni sonsuz seviyorum ❤️
-  </div>
-
-  <audio autoplay loop>
+  </div>  <section class="gallery">
+    <img src="https://drive.google.com/uc?export=view&id=1QDA0Y8dsdrhU9fNzDE4PXa7FkDvo7TQS" alt="Foto 1">
+    <img src="https://drive.google.com/uc?export=view&id=1T-Kd2HEJk9p8PVSEwYIj2emFtdd31YEv" alt="Foto 2">
+    <img src="https://drive.google.com/uc?export=view&id=1e2z-vgQmL9sPbRYfOEiIE_UEV9mJKkv9" alt="Foto 3">
+  </section>  <audio autoplay loop>
     <source src="https://dl.dropboxusercontent.com/scl/fi/c8y7htgk1i9ghoj1v46bw/firtinadayim.mp3?rlkey=luam1wbco11wwb3x82ycwrcuq&st=vhvte3hc" type="audio/mpeg">
-  </audio>
-
-  <script>
+  </audio>  <script>
     function showSurprise() {
       document.getElementById("surprise-message").style.display = "block";
     }
@@ -125,10 +135,5 @@
 
       countdownEl.innerHTML = `Yıldönümümüze kalan süre: ${days} gün ${hours} saat ${minutes} dakika ${seconds} saniye`;
     }, 1000);
-  </script>
-</body>
+  </script></body>
 </html>
-
-
-search()
-
